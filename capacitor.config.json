@@ -1,0 +1,6 @@
+{
+  "appId": "com.sdev.app",
+  "appName": "sdev",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}

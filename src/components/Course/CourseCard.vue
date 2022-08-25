@@ -1,14 +1,25 @@
 <template>
-	<div class="wrapper">
-		<h1 class="item-number">01</h1>
+	<div class="wrapper" v-for="item in items">
+		<h1 class="item-number">{{ item[0] }}</h1>
 		<div class="right-col">
-			<h1 class="title">Classification: Types Of Metals</h1>
-			<h4 class="timestamp">00:24:39</h4>
+			<h1 class="title">{{ item[1] }}</h1>
+			<h4 class="timestamp">{{ item[2] }}</h4>
 		</div>
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+const items = ref([
+	["1", "Current Electricity Class 12 OneShot", "01:31:04"],
+	["2", "How Does An Electric Motor Work", "0:10:06"],
+	["3", "Numericals - Current Electricity", "01:30:48"],
+	["4", "Magnetic Effect Of Electric Current", "01:21:36"],
+	["5", "Kirchoff's Laws", "0:47:06"],
+	["6", "Current Density & Electron Drift", "02:27:08"],
+]);
+</script>
 
 <style scoped>
 .wrapper {

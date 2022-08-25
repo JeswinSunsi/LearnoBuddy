@@ -4,7 +4,6 @@
 		<Recents />
 		<ColorfulScroll />
 		<List :rem="4.2" />
-		<BooksCarousal :rem="3.4" />
 		<BooksCarousal :rem="7.5" />
 	</div>
 </template>

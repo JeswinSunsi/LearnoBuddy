@@ -5,6 +5,7 @@ import Library from "../views/Library.vue";
 import Questions from "../views/Questions.vue";
 import Search from "../views/Search.vue";
 import Course from "../views/Course.vue";
+import Answer from "../views/Answer.vue";
 
 const routes = [
 	{ path: "/", name: "Home", component: Home },
@@ -13,6 +14,7 @@ const routes = [
 	{ path: "/search", name: "Search", component: Search },
 	{ path: "/account", name: "Account", component: Home },
 	{ path: "/course", name: "Course", component: Course },
+	{ path: "/answer", name: "Answer", component: Answer },
 ];
 
 const router = createRouter({

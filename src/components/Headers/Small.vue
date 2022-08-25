@@ -13,6 +13,7 @@
 
 <script setup>
 import { ref } from "vue";
+
 const props = defineProps({
 	rem: { type: Number, default: 1.8 },
 	type: { type: String, default: "default" },

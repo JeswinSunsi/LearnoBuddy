@@ -6,11 +6,11 @@
 		</div>
 		<div class="scroll-container">
 			<div class="scroll-padding"></div>
-			<div class="scroll-item" v-for="item in 9" :key="item">
-				<img src="https://m.media-amazon.com/images/I/51xyw21J1XL.jpg" alt="book-cover" class="book-cover" />
+			<div class="scroll-item" v-for="item in items" :key="item">
+				<img :src="item.image" alt="book-cover" class="book-cover" />
 				<div class="text-content">
-					<h3 class="author">Kaitlyn Greenidge</h3>
-					<h4 class="name">Libertie: A Novel</h4>
+					<h3 class="author">{{ item.author }}</h3>
+					<h4 class="name">{{ item.title }}</h4>
 				</div>
 			</div>
 		</div>
@@ -18,9 +18,17 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
+
 const props = defineProps({
 	rem: { type: Number, default: 2.8 },
 });
+
+const items = ref([
+	{ title: "Also a Poet", author: "Ada Calhoun", image: "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1651001039-41D2mFqYFDL._SL500_.jpg" },
+	{ title: "An Immense World", author: "Ed Yong", image: "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1655409386-51opFv0yLCL._SL500_.jpg" },
+	{ title: "Homesickness", author: "Colin Barrett", image: "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1656424993-41EtVZfOd5L._SL500_.jpg" },
+]);
 </script>
 
 <style scoped>

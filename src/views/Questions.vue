@@ -3,7 +3,7 @@
 		<SmallHeader :rem="1.8" type="questions" />
 		<h1 class="filter"><span class="colored">Recently Asked</span> Questions</h1>
 		<span class="flex-center">
-			<QuestionBox v-for="box in 3" :key="box" />
+			<QuestionBox />
 		</span>
 	</div>
 </template>

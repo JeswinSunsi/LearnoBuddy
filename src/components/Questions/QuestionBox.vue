@@ -1,19 +1,30 @@
 <template>
-	<div class="wrapper">
+	<div class="wrapper" v-for="item in items" @click="$router.push('Answer')">
 		<div class="top-information">
 			<span class="flex-wrapper">
-				<img src="https://ui-avatars.com/api/?background=random&name=j" alt="icon" />
-				<h3 class="username">Jeswin Sunsi</h3>
+				<img :src="`https://ui-avatars.com/api/?background=random&name=${item[0]}`" alt="icon" />
+				<h3 class="username">{{ item[0] }}</h3>
 				<h4 class="time">&nbsp;· Right Now</h4>
 			</span>
 			<h1 class="menu">...</h1>
 		</div>
-		<h1 class="question">What is the difference between low-level and high-level architecture?</h1>
-		<div class="subject">COMPUTER SCIENCE</div>
+		<h1 class="question">{{ item[1] }}</h1>
+		<div class="subject">{{ item[2] }}</div>
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+const items = ref([
+	["Jeswin Sunsi", "How to create nested lists in Python automatically", "Computer Science"],
+	["Ayaan Mahta", "How is total internal reflection used to make Fiber Optics?", "Physics"],
+	["Sri Rajkavin", "Aldehyde Reduction Notes", "Chemistry"],
+	["Charan Singh", "What are the metal strips in Meter Bridge used for?", "Physics"],
+	["Aditya Giri", "The Road Not Taken - poetic devices", "English"],
+	["Sanket Nathani", "Carcinogens Notes", "Physics"],
+]);
+</script>
 
 <style scoped>
 .wrapper {

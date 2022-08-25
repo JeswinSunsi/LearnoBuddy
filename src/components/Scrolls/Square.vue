@@ -6,18 +6,19 @@
 		</div>
 		<div class="scroll-container">
 			<div class="scroll-padding"></div>
-			<div class="scroll-item" style="background-color: #eaf3f9" v-for="item in 9" :key="item">
-				<img src="../../assets/tempr/money.png" alt="illustration" />
-				<h3 class="description">Entrepreneurship</h3>
-			</div>
+			<div class="scroll-item" v-for="item in items" :key="item" :style="`background-image: url(${item})`"></div>
 		</div>
 	</div>
 </template>
 
 <script setup>
+import { ref } from "vue";
+
 const props = defineProps({
 	rem: { type: Number, default: 2.8 },
 });
+
+const items = ref(["https://i.imgur.com/SonjR9R.png", "https://i.imgur.com/P4mjSen.png", "https://i.imgur.com/unTI2rH.png", "https://i.imgur.com/m3C61V8.png", "https://i.imgur.com/ArBo9vm.png", "https://i.imgur.com/G4Phaqw.png"]);
 </script>
 
 <style scoped>
@@ -69,6 +70,8 @@ const props = defineProps({
 	font-size: 0.8rem;
 	font-weight: 500;
 	line-height: 1.5rem;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 .scroll-item img {

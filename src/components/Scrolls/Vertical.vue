@@ -5,17 +5,17 @@
 			<h2 class="subtitle">See All</h2>
 		</div>
 		<span class="flex-wrapper">
-			<div class="item" v-for="item in 3" :key="item">
+			<div class="item" v-for="item in items" :key="item">
 				<div class="left-content">
-					<img src="../../assets/tempr/freecourse.png" alt="free course" />
+					<img :src="item.image" alt="free course" />
 					<span class="flex-col">
-						<h4 class="course-site">udemy.com</h4>
-						<h2 class="course-name">Introduction to Picasso</h2>
-						<h3 class="course-info">5h 7m | 4.2 ✨</h3>
+						<h4 class="course-site">{{ item.site }}</h4>
+						<h2 class="course-name">{{ item.title }}</h2>
+						<h3 class="course-info">{{ item.duration }}</h3>
 					</span>
 				</div>
 				<div class="right-content">
-					<div class="get-button">GET</div>
+					<div class="get-button"><a :href="item.link">GET</a></div>
 				</div>
 			</div>
 		</span>
@@ -23,9 +23,17 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
+
 const props = defineProps({
 	rem: { type: Number, default: 2.8 },
 });
+
+const items = ref([
+	{ site: "udemy.com", link: "https://www.udemy.com/course/java-tutorial/", image: "https://images.idgesg.net/images/article/2019/05/java_binary_code_gears_programming_coding_development_by_bluebay2014_gettyimages-1040871468_2400x1600-100795798-large.jpg", title: "Java Tutorial For Beginners", duration: "16H 7M | 4.0 ✨" },
+	{ site: "udemy.com", link: "https://www.udemy.com/course/microeconomics-1/", image: "https://previews.123rf.com/images/kentoh/kentoh1309/kentoh130900344/22270683-microeconomics-or-micro-economics-as-a-concept.jpg", title: "Micro Economics For Beginners", duration: "1H 9M | 4.7 ✨" },
+	{ site: "udemy.com", link: "https://www.udemy.com/course/statistics-literacy-for-non-statisticians/", image: "https://online.stat.psu.edu/statprogram/sites/statprogram/files/2018-08/statistics-review.jpg", title: "Statistics & Data Literacy", duration: "1H 6M | 4.2 ✨" },
+]);
 </script>
 
 <style scoped>

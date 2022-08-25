@@ -6,18 +6,28 @@
 		</div>
 		<div class="scroll-container">
 			<div class="scroll-padding"></div>
-			<div class="scroll-item" v-for="item in 9" :key="item">
-				<h2 class="certification">SAT</h2>
-				<h3 class="description">North America</h3>
+			<div class="scroll-item" v-for="item in items" :key="item">
+				<h2 class="certification">{{ item[0] }}</h2>
+				<h3 class="description">{{ item[1] }}</h3>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script setup>
+import { ref } from "vue";
+
 const props = defineProps({
 	rem: { type: Number, default: 2.8 },
 });
+
+const items = ref([
+	["SAT", "North America"],
+	["JEE", "All India"],
+	["KCET", "Karnataka"],
+	["ACT", "United States"],
+	["BCL", "France"],
+]);
 </script>
 
 <style scoped>

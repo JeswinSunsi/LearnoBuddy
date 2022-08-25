@@ -1,7 +1,7 @@
 <template>
 	<div class="wrapper">
 		<h3 class="topic">TOPIC</h3>
-		<h2 class="title">The Solid State</h2>
+		<h2 class="title">Electric Current & Fields</h2>
 		<h4 class="quantity"><span class="colored">04</span> Lessons Found ✨</h4>
 	</div>
 </template>

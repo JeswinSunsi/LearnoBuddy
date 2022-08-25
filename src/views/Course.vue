@@ -4,10 +4,8 @@
 		<YoutubeEmbed />
 		<CourseInfo />
 		<CourseCard />
-		<CourseCard />
-		<CourseCard />
 		<div class="margin"></div>
-		<NormalScroll :rem="8" />
+		<NormalScroll :rem="8" :items="['https://i.imgur.com/sQHa5Vy.png', 'https://i.imgur.com/rWeWWRt.png', 'https://i.imgur.com/ZLYZKv9.png']" />
 	</div>
 </template>
 

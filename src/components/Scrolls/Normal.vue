@@ -7,13 +7,7 @@
 		<div class="scroll-container">
 			<div class="scroll-padding"></div>
 
-			<div class="scroll-item" v-for="item in 9" :key="item">
-				<img src="../../assets/tempr/atom.png" alt="atom" />
-				<span class="flex-col">
-					<h1 class="course-subtitle">PHYSICS G12</h1>
-					<h3 class="course-title">Solid State</h3>
-				</span>
-			</div>
+			<div class="scroll-item" v-for="item in props.items" :key="item" :style="`background-image: url(${item}) `" @click="$router.push('Course')"></div>
 		</div>
 	</div>
 </template>
@@ -21,6 +15,7 @@
 <script setup>
 const props = defineProps({
 	rem: { type: Number, default: 2.8 },
+	items: { type: Array },
 });
 </script>
 
@@ -69,17 +64,18 @@ const props = defineProps({
 }
 
 .scroll-item {
-	margin-right: 1rem;
+	margin-right: 0.8rem;
 	scroll-snap-align: start;
 	scroll-snap-stop: always;
 	border-radius: 0.8rem;
 	height: 9rem;
 	min-width: 20.9rem;
-	background-color: #0f9d58;
 	display: flex;
 	align-items: center;
 	justify-content: start;
 	padding-left: 1.7rem;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .scroll-item img {

@@ -5,16 +5,16 @@
 		</div>
 		<div class="scroll-container">
 			<div class="scroll-padding"></div>
-			<div class="scroll-item" v-for="item in 2" :key="item">
-				<img src="https://images-na.ssl-images-amazon.com/images/I/81a4kCNuH+L.jpg" alt="" />
+			<div class="scroll-item" v-for="item in items" :key="item">
+				<img :src="item.image" alt="" />
 				<span>
 					<div class="text-content">
-						<h3 class="author">John Greene</h3>
-						<h4 class="name">The Adventures of Tintin: Curse of the Pharaoh</h4>
+						<h3 class="author">{{ item.author }}</h3>
+						<h4 class="name">{{ item.title }}</h4>
 					</div>
 					<div class="like-wrapper">
 						<img src="../../assets/library/likes.png" class="like-icon" />
-						<h5 class="likes">38 People like this</h5>
+						<h5 class="likes">{{ item.people }}</h5>
 					</div>
 				</span>
 			</div>
@@ -24,9 +24,16 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
+
 const props = defineProps({
 	rem: { type: Number, default: 2.8 },
 });
+
+const items = ref([
+	{ image: "https://pyxis.nymag.com/v1/imgs/493/35e/e355e06e2600e957ae69bc74b588e6393b-constructing-a-nervous-system.rdeep-vertical.w460.jpg", author: "Margo Jefferson", title: "Constructing a Nervous System", people: "38 People like this" },
+	{ image: "https://cdn.waterstones.com/bookjackets/large/9780/8575/9780857528124.jpg", author: "Bonnie Garmus", title: "Lessons in Chemistry", people: "12 People like this" },
+]);
 </script>
 
 <style scoped>

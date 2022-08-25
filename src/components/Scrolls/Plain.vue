@@ -1,7 +1,7 @@
 <template>
 	<div class="wrapper" :style="{ 'margin-bottom': props.rem + 'rem' }">
 		<div class="scroll-padding"></div>
-		<div class="item">All Subjects</div>
+		<div class="item selected">All Subjects</div>
 		<div class="item">Chemistry</div>
 		<div class="item">Mathematics</div>
 		<div class="item">Physics</div>
@@ -52,5 +52,10 @@ const props = defineProps({
 	margin-right: 0.5rem;
 	scroll-snap-align: start;
 	scroll-snap-stop: always;
+}
+
+.selected {
+	color: #5f5f5f;
+	font-weight: 500;
 }
 </style>

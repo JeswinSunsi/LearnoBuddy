@@ -2,11 +2,11 @@
 	<div class="container">
 		<main-header :rem="0.9" />
 		<plain-scroll :rem="1.8" />
-		<normal-scroll />
+		<normal-scroll :items="['https://i.imgur.com/sQHa5Vy.png', 'https://i.imgur.com/rWeWWRt.png', 'https://i.imgur.com/ZLYZKv9.png']" />
 		<normal-banner />
 		<square-scroll />
 		<vertical-scroll />
-		<normal-scroll />
+		<normal-scroll :items="['https://i.imgur.com/R8ffeqN.png', 'https://i.imgur.com/GKE4KX6.png', 'https://i.imgur.com/RARd3MO.png']" />
 		<square-text-scroll :rem="8" />
 	</div>
 </template>
